@@ -1,0 +1,532 @@
+DEBUG: No dangling containers to remove
+INFO: Repository started
+{
+  "renovateVersion": "27.28.1"
+}
+DEBUG: Using localDir: /mnt/renovate/gh/glasser/renovate-reproduction-12068
+DEBUG: Repository cache is valid
+DEBUG: initRepo("glasser/renovate-reproduction-12068")
+DEBUG: Overriding default GitHub endpoint
+{
+  "endpoint": "https://api.github.com/"
+}
+DEBUG: glasser/renovate-reproduction-12068 default branch = master
+DEBUG: Using app token for git init
+DEBUG: resetMemCache()
+DEBUG: Resetting npmrc
+DEBUG: checkOnboarding()
+DEBUG: isOnboarded()
+DEBUG: Checking cached config file name
+DEBUG: Existing config file no longer exists
+DEBUG: findFile(renovate.json)
+DEBUG: Initializing git repository into /mnt/renovate/gh/glasser/renovate-reproduction-12068
+DEBUG: git clone completed
+{
+  "durationMs": 877
+}
+DEBUG: latest repository commit
+{
+  "latestCommit": {
+    "hash": "efd18d1a39ae0585a4b7b22c9119fe75cb3ceb72",
+    "date": "2021-10-08T10:22:39-07:00",
+    "message": "Reproduce",
+    "refs": "HEAD -> master, origin/master, origin/HEAD",
+    "body": "",
+    "author_name": "David Glasser",
+    "author_email": "glasser@davidglasser.net"
+  }
+}
+DEBUG: findFile(renovate.json5)
+DEBUG: Config file exists
+{
+  "fileName": "renovate.json5"
+}
+DEBUG: Retrieving issueList
+DEBUG: Retrieved 1 issues
+DEBUG: Repo is onboarded
+DEBUG: Found renovate.json5 config file
+DEBUG: Repository config
+{
+  "fileName": "renovate.json5",
+  "config": {
+    "extends": [
+      "apollo-open-source"
+    ],
+    "schedule": null,
+    "enabledManagers": [
+      "npm"
+    ],
+    "dependencyDashboard": true,
+    "packageRules": [
+      {
+        "matchPackagePatterns": [
+          ""
+        ],
+        "prCreation": "immediate"
+      }
+    ]
+  }
+}
+DEBUG: migrateAndValidate()
+DEBUG: No config migration necessary
+DEBUG: massaged config
+{
+  "config": {
+    "extends": [
+      "github>whitesource/merge-confidence:beta",
+      "apollo-open-source"
+    ],
+    "schedule": null,
+    "enabledManagers": [
+      "npm"
+    ],
+    "dependencyDashboard": true,
+    "packageRules": [
+      {
+        "matchPackagePatterns": [
+          ""
+        ],
+        "prCreation": "immediate"
+      }
+    ]
+  }
+}
+DEBUG: migrated config
+{
+  "config": {
+    "extends": [
+      "github>whitesource/merge-confidence:beta",
+      "apollo-open-source"
+    ],
+    "schedule": null,
+    "enabledManagers": [
+      "npm"
+    ],
+    "dependencyDashboard": true,
+    "packageRules": [
+      {
+        "matchPackagePatterns": [
+          ""
+        ],
+        "prCreation": "immediate"
+      }
+    ]
+  }
+}
+DEBUG: Found repo ignorePaths
+{
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/bower_components/**"
+  ]
+}
+DEBUG: No vulnerability alerts found
+DEBUG: No vulnerability alerts found
+DEBUG: findIssue(Dependency Dashboard)
+DEBUG: Found issue 2
+DEBUG: No baseBranches
+DEBUG: extract()
+DEBUG: Found cached extract
+{
+  "baseBranch": "master",
+  "baseBranchSha": "efd18d1a39ae0585a4b7b22c9119fe75cb3ceb72"
+}
+DEBUG: Deleted cached dep updates
+INFO: Dependency extraction complete
+{
+  "baseBranch": "master",
+  "stats": {
+    "managers": {
+      "npm": {
+        "fileCount": 1,
+        "depCount": 2
+      }
+    },
+    "total": {
+      "fileCount": 1,
+      "depCount": 2
+    }
+  }
+}
+DEBUG: Setting npmrc
+DEBUG: Package releases lookups complete
+{
+  "baseBranch": "master"
+}
+DEBUG: branchifyUpgrades
+DEBUG: 1 flattened updates found: npm
+DEBUG: Returning 1 branch(es)
+DEBUG: Fetching changelog: https://github.com/npm/cli (7.24.2 -> 8.0.0)
+DEBUG: config.repoIsOnboarded=true
+DEBUG: packageFiles with updates
+{
+  "config": {
+    "npm": [
+      {
+        "packageFile": "package.json",
+        "deps": [
+          {
+            "depType": "engines",
+            "depName": "node",
+            "currentValue": ">=12",
+            "datasource": "github-tags",
+            "lookupName": "nodejs/node",
+            "versioning": "node",
+            "commitMessageTopic": "Node.js",
+            "prettyDepType": "engine",
+            "lockedVersion": null,
+            "depIndex": 0,
+            "warnings": [],
+            "sourceUrl": "https://github.com/nodejs/node",
+            "currentVersion": "v16.11.0",
+            "updates": []
+          },
+          {
+            "depType": "engines",
+            "depName": "npm",
+            "currentValue": "7.x",
+            "datasource": "npm",
+            "commitMessageTopic": "npm",
+            "prettyDepType": "engine",
+            "lockedVersion": null,
+            "depIndex": 1,
+            "warnings": [],
+            "versioning": "npm",
+            "sourceUrl": "https://github.com/npm/cli",
+            "homepage": "https://docs.npmjs.com/",
+            "currentVersion": "7.24.2",
+            "isSingleVersion": false,
+            "updates": [
+              {
+                "bucket": "major",
+                "newVersion": "8.0.0",
+                "newValue": "8.x",
+                "releaseTimestamp": "2021-10-07T20:11:10.601Z",
+                "newMajor": 8,
+                "newMinor": 0,
+                "updateType": "major",
+                "isRange": true,
+                "branchName": "renovate/npm-8.x"
+              }
+            ]
+          }
+        ],
+        "packageJsonName": "renovate-reproduction-12068",
+        "packageJsonType": "app",
+        "npmrc": "***********",
+        "npmLock": "package-lock.json",
+        "managerData": {
+          "yarnZeroInstall": false
+        },
+        "skipInstalls": true,
+        "constraints": {
+          "node": ">=12",
+          "npm": "7.x"
+        },
+        "lockFiles": [
+          "package-lock.json"
+        ]
+      }
+    ]
+  }
+}
+DEBUG: processRepo()
+DEBUG: Processing 1 branch: renovate/npm-8.x
+DEBUG: Calculated maximum PRs remaining this run
+{
+  "prsRemaining": 99
+}
+DEBUG: PullRequests limit = 99
+DEBUG: Calculated maximum branches remaining this run
+{
+  "branchesRemaining": 99
+}
+DEBUG: Branches limit = 99
+DEBUG: Setting current branch to master(branch="renovate/npm-8.x")
+DEBUG: latest commit(branch="renovate/npm-8.x")
+{
+  "branchName": "master",
+  "latestCommitDate": "2021-10-08T10:22:39-07:00"
+}
+DEBUG: getBranchPr(renovate/npm-8.x)(branch="renovate/npm-8.x")
+DEBUG: findPr(renovate/npm-8.x, undefined, open)(branch="renovate/npm-8.x")
+DEBUG: Retrieving PR list(branch="renovate/npm-8.x")
+DEBUG: Retrieved 1 Pull Requests(branch="renovate/npm-8.x")
+DEBUG: findPr(renovate/npm-8.x, undefined, closed)(branch="renovate/npm-8.x")
+DEBUG: Found PR #1(branch="renovate/npm-8.x")
+DEBUG: branchExists=false(branch="renovate/npm-8.x")
+DEBUG: dependencyDashboardCheck=undefined(branch="renovate/npm-8.x")
+DEBUG: recreateClosed is false(branch="renovate/npm-8.x")
+DEBUG: findPr(renovate/npm-8.x, chore(deps): update npm to v8, !open)(branch="renovate/npm-8.x")
+DEBUG: prAlreadyExisted=false(branch="renovate/npm-8.x")
+DEBUG: Checking schedule(null, America/Los_Angeles)(branch="renovate/npm-8.x")
+DEBUG: No schedule defined(branch="renovate/npm-8.x")
+DEBUG: Branch needs creating(branch="renovate/npm-8.x")
+DEBUG: Using reuseExistingBranch: false(branch="renovate/npm-8.x")
+DEBUG: manager.getUpdatedPackageFiles() reuseExistinbranch=false(branch="renovate/npm-8.x")
+DEBUG: npm.updateDependency(): engines.npm = 8.x(branch="renovate/npm-8.x")
+DEBUG: Updating npm in package.json(branch="renovate/npm-8.x")
+DEBUG: Updated 1 package files(branch="renovate/npm-8.x")
+DEBUG: Getting updated lock files(branch="renovate/npm-8.x")
+DEBUG: Writing package.json files(branch="renovate/npm-8.x")
+{
+  "packageFiles": [
+    "package.json"
+  ]
+}
+DEBUG: Writing package-lock.json(branch="renovate/npm-8.x")
+DEBUG: Writing any updated package files(branch="renovate/npm-8.x")
+DEBUG: Writing package.json(branch="renovate/npm-8.x")
+DEBUG: npmrc file found in repository(branch="renovate/npm-8.x")
+DEBUG: Generating package-lock.json for .(branch="renovate/npm-8.x")
+DEBUG: Spawning npm install to create /mnt/renovate/gh/glasser/renovate-reproduction-12068/package-lock.json(branch="renovate/npm-8.x")
+DEBUG: Updating lock file only(branch="renovate/npm-8.x")
+DEBUG: Using node constraint ">=12" from package.json(branch="renovate/npm-8.x")
+DEBUG: Forcing node 15 to ensure lockfileVersion=2 is used(branch="renovate/npm-8.x")
+DEBUG: Using docker to execute(branch="renovate/npm-8.x")
+DEBUG: Found version constraint - checking for a compatible image to use(branch="renovate/npm-8.x")
+{
+  "depName": "docker.io/renovate/node",
+  "scheme": "npm",
+  "constraint": ">=15"
+}
+DEBUG: getLabels(https://index.docker.io, renovate/node, latest)(branch="renovate/npm-8.x")
+DEBUG: Found compatible image version(branch="renovate/npm-8.x")
+{
+  "depName": "docker.io/renovate/node",
+  "scheme": "npm",
+  "constraint": ">=15",
+  "version": "v16.10.0"
+}
+DEBUG: Resolved tag constraint(branch="renovate/npm-8.x")
+{
+  "image": "docker.io/renovate/node",
+  "tagConstraint": ">=15",
+  "tagVersioning": "npm",
+  "tag": "v16.10.0"
+}
+DEBUG: Fetching Docker image: docker.io/renovate/node:v16.10.0(branch="renovate/npm-8.x")
+DEBUG: Finished fetching Docker image(branch="renovate/npm-8.x")
+DEBUG: Executing command(branch="renovate/npm-8.x")
+{
+  "command": [
+    "docker run --rm --name=renovate_node --label=renovate_child -v \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\":\"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" -v \"/tmp/renovate-cache\":\"/tmp/renovate-cache\" -e NPM_CONFIG_CACHE -e npm_config_store -w \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" docker.io/renovate/node:v16.10.0 bash -l -c \"npm i -g npm@7.x || true && hash -d npm && npm install --package-lock-only --no-audit --ignore-scripts\""
+  ]
+}
+DEBUG: rawExec err(branch="renovate/npm-8.x")
+{
+  "err": {
+    "killed": false,
+    "code": 1,
+    "signal": null,
+    "cmd": "docker run --rm --name=renovate_node --label=renovate_child -v \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\":\"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" -v \"/tmp/renovate-cache\":\"/tmp/renovate-cache\" -e NPM_CONFIG_CACHE -e npm_config_store -w \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" docker.io/renovate/node:v16.10.0 bash -l -c \"npm i -g npm@7.x || true && hash -d npm && npm install --package-lock-only --no-audit --ignore-scripts\"",
+    "stdout": "\nadded 1 package, and audited 259 packages in 8s\n\n11 packages are looking for funding\n  run `npm fund` for details\n\n3 moderate severity vulnerabilities\n\nTo address all issues, run:\n  npm audit fix\n\nRun `npm audit` for details.\n",
+    "stderr": "npm notice \nnpm notice New major version of npm available! 7.24.0 -> 8.0.0\nnpm notice Changelog: <https://**redacted**@8.0.0` to update!\nnpm notice \nnpm ERR! code EBADENGINE\nnpm ERR! engine Unsupported engine\nnpm ERR! engine Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Required: {\"node\":\">=12\",\"npm\":\"8.x\"}\nnpm ERR! notsup Actual:   {\"npm\":\"7.24.2\",\"node\":\"v16.10.0\"}\n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR!     /tmp/renovate-cache/others/npm/_logs/2021-10-08T17_33_25_474Z-debug.log\n",
+    "message": "Command failed: docker run --rm --name=renovate_node --label=renovate_child -v \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\":\"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" -v \"/tmp/renovate-cache\":\"/tmp/renovate-cache\" -e NPM_CONFIG_CACHE -e npm_config_store -w \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" docker.io/renovate/node:v16.10.0 bash -l -c \"npm i -g npm@7.x || true && hash -d npm && npm install --package-lock-only --no-audit --ignore-scripts\"\nnpm notice \nnpm notice New major version of npm available! 7.24.0 -> 8.0.0\nnpm notice Changelog: <https://**redacted**@8.0.0` to update!\nnpm notice \nnpm ERR! code EBADENGINE\nnpm ERR! engine Unsupported engine\nnpm ERR! engine Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Required: {\"node\":\">=12\",\"npm\":\"8.x\"}\nnpm ERR! notsup Actual:   {\"npm\":\"7.24.2\",\"node\":\"v16.10.0\"}\n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR!     /tmp/renovate-cache/others/npm/_logs/2021-10-08T17_33_25_474Z-debug.log\n",
+    "stack": "Error: Command failed: docker run --rm --name=renovate_node --label=renovate_child -v \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\":\"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" -v \"/tmp/renovate-cache\":\"/tmp/renovate-cache\" -e NPM_CONFIG_CACHE -e npm_config_store -w \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" docker.io/renovate/node:v16.10.0 bash -l -c \"npm i -g npm@7.x || true && hash -d npm && npm install --package-lock-only --no-audit --ignore-scripts\"\nnpm notice \nnpm notice New major version of npm available! 7.24.0 -> 8.0.0\nnpm notice Changelog: <https://**redacted**@8.0.0` to update!\nnpm notice \nnpm ERR! code EBADENGINE\nnpm ERR! engine Unsupported engine\nnpm ERR! engine Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Required: {\"node\":\">=12\",\"npm\":\"8.x\"}\nnpm ERR! notsup Actual:   {\"npm\":\"7.24.2\",\"node\":\"v16.10.0\"}\n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR!     /tmp/renovate-cache/others/npm/_logs/2021-10-08T17_33_25_474Z-debug.log\n\n    at ChildProcess.exithandler (child_process.js:390:12)\n    at ChildProcess.emit (events.js:400:28)\n    at ChildProcess.emit (domain.js:470:12)\n    at maybeClose (internal/child_process.js:1055:16)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5)"
+  }
+}
+DEBUG: lock file error(branch="renovate/npm-8.x")
+{
+  "err": {
+    "killed": false,
+    "code": 1,
+    "signal": null,
+    "cmd": "docker run --rm --name=renovate_node --label=renovate_child -v \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\":\"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" -v \"/tmp/renovate-cache\":\"/tmp/renovate-cache\" -e NPM_CONFIG_CACHE -e npm_config_store -w \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" docker.io/renovate/node:v16.10.0 bash -l -c \"npm i -g npm@7.x || true && hash -d npm && npm install --package-lock-only --no-audit --ignore-scripts\"",
+    "stdout": "\nadded 1 package, and audited 259 packages in 8s\n\n11 packages are looking for funding\n  run `npm fund` for details\n\n3 moderate severity vulnerabilities\n\nTo address all issues, run:\n  npm audit fix\n\nRun `npm audit` for details.\n",
+    "stderr": "npm notice \nnpm notice New major version of npm available! 7.24.0 -> 8.0.0\nnpm notice Changelog: <https://**redacted**@8.0.0` to update!\nnpm notice \nnpm ERR! code EBADENGINE\nnpm ERR! engine Unsupported engine\nnpm ERR! engine Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Required: {\"node\":\">=12\",\"npm\":\"8.x\"}\nnpm ERR! notsup Actual:   {\"npm\":\"7.24.2\",\"node\":\"v16.10.0\"}\n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR!     /tmp/renovate-cache/others/npm/_logs/2021-10-08T17_33_25_474Z-debug.log\n",
+    "message": "Command failed: docker run --rm --name=renovate_node --label=renovate_child -v \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\":\"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" -v \"/tmp/renovate-cache\":\"/tmp/renovate-cache\" -e NPM_CONFIG_CACHE -e npm_config_store -w \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" docker.io/renovate/node:v16.10.0 bash -l -c \"npm i -g npm@7.x || true && hash -d npm && npm install --package-lock-only --no-audit --ignore-scripts\"\nnpm notice \nnpm notice New major version of npm available! 7.24.0 -> 8.0.0\nnpm notice Changelog: <https://**redacted**@8.0.0` to update!\nnpm notice \nnpm ERR! code EBADENGINE\nnpm ERR! engine Unsupported engine\nnpm ERR! engine Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Required: {\"node\":\">=12\",\"npm\":\"8.x\"}\nnpm ERR! notsup Actual:   {\"npm\":\"7.24.2\",\"node\":\"v16.10.0\"}\n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR!     /tmp/renovate-cache/others/npm/_logs/2021-10-08T17_33_25_474Z-debug.log\n",
+    "stack": "Error: Command failed: docker run --rm --name=renovate_node --label=renovate_child -v \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\":\"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" -v \"/tmp/renovate-cache\":\"/tmp/renovate-cache\" -e NPM_CONFIG_CACHE -e npm_config_store -w \"/mnt/renovate/gh/glasser/renovate-reproduction-12068\" docker.io/renovate/node:v16.10.0 bash -l -c \"npm i -g npm@7.x || true && hash -d npm && npm install --package-lock-only --no-audit --ignore-scripts\"\nnpm notice \nnpm notice New major version of npm available! 7.24.0 -> 8.0.0\nnpm notice Changelog: <https://**redacted**@8.0.0` to update!\nnpm notice \nnpm ERR! code EBADENGINE\nnpm ERR! engine Unsupported engine\nnpm ERR! engine Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Required: {\"node\":\">=12\",\"npm\":\"8.x\"}\nnpm ERR! notsup Actual:   {\"npm\":\"7.24.2\",\"node\":\"v16.10.0\"}\n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR!     /tmp/renovate-cache/others/npm/_logs/2021-10-08T17_33_25_474Z-debug.log\n\n    at ChildProcess.exithandler (child_process.js:390:12)\n    at ChildProcess.emit (events.js:400:28)\n    at ChildProcess.emit (domain.js:470:12)\n    at maybeClose (internal/child_process.js:1055:16)\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5)"
+  },
+  "type": "npm"
+}
+DEBUG: No updated lock files in branch(branch="renovate/npm-8.x")
+DEBUG: Branch timestamp: 2021-10-07T20:11:10.601Z(branch="renovate/npm-8.x")
+DEBUG: PR is older than 2 hours, raise PR with lock file errors(branch="renovate/npm-8.x")
+DEBUG: 1 file(s) to commit(branch="renovate/npm-8.x")
+DEBUG: Committing files to branch renovate/npm-8.x(branch="renovate/npm-8.x")
+DEBUG: Setting git author name(branch="renovate/npm-8.x")
+{
+  "gitAuthorName": "Renovate Bot"
+}
+DEBUG: Setting git author email(branch="renovate/npm-8.x")
+{
+  "gitAuthorEmail": "bot@renovateapp.com"
+}
+DEBUG: git commit(branch="renovate/npm-8.x")
+{
+  "deletedFiles": [],
+  "ignoredFiles": [],
+  "result": {
+    "author": null,
+    "branch": "renovate/npm-8.x",
+    "commit": "3c3bfee",
+    "root": false,
+    "summary": {
+      "changes": 1,
+      "insertions": 1,
+      "deletions": 1
+    }
+  }
+}
+DEBUG: git push(branch="renovate/npm-8.x")
+{
+  "result": {
+    "pushed": [
+      {
+        "deleted": false,
+        "tag": false,
+        "branch": true,
+        "new": true,
+        "alreadyUpdated": false,
+        "local": "refs/heads/renovate/npm-8.x",
+        "remote": "refs/heads/renovate/npm-8.x"
+      }
+    ],
+    "branch": {
+      "local": "renovate/npm-8.x",
+      "remote": "renovate/npm-8.x",
+      "remoteName": "origin"
+    },
+    "ref": {
+      "local": "refs/remotes/origin/renovate/npm-8.x"
+    },
+    "remoteMessages": {
+      "all": [
+        "Create a pull request for 'renovate/npm-8.x' on GitHub by visiting:",
+        "https://github.com/glasser/renovate-reproduction-12068/pull/new/renovate/npm-8.x"
+      ],
+      "pullRequestUrl": "https://github.com/glasser/renovate-reproduction-12068/pull/new/renovate/npm-8.x"
+    }
+  }
+}
+INFO: Branch created(branch="renovate/npm-8.x")
+{
+  "commitSha": "3c3bfee"
+}
+DEBUG: Updating status check state to failed(branch="renovate/npm-8.x")
+DEBUG: Setting branch status(branch="renovate/npm-8.x")
+{
+  "context": "renovate/artifacts",
+  "state": "red"
+}
+DEBUG: Ensuring PR(branch="renovate/npm-8.x")
+DEBUG: There are 0 errors and 0 warnings(branch="renovate/npm-8.x")
+DEBUG: getBranchPr(renovate/npm-8.x)(branch="renovate/npm-8.x")
+DEBUG: findPr(renovate/npm-8.x, undefined, open)(branch="renovate/npm-8.x")
+DEBUG: findPr(renovate/npm-8.x, undefined, closed)(branch="renovate/npm-8.x")
+DEBUG: Found PR #1(branch="renovate/npm-8.x")
+DEBUG: Forcing PR because of artifact errors(branch="renovate/npm-8.x")
+DEBUG: Creating PR(branch="renovate/npm-8.x")
+{
+  "prTitle": "chore(deps): update npm to v8"
+}
+DEBUG: Creating PR(branch="renovate/npm-8.x")
+{
+  "title": "chore(deps): update npm to v8",
+  "head": "glasser:renovate/npm-8.x",
+  "base": "master",
+  "draft": false
+}
+DEBUG: PR created(branch="renovate/npm-8.x")
+{
+  "pr": 3,
+  "draft": false
+}
+DEBUG: Adding labels ':christmas_tree: dependencies' to #3(branch="renovate/npm-8.x")
+INFO: PR created(branch="renovate/npm-8.x")
+{
+  "pr": 3,
+  "prTitle": "chore(deps): update npm to v8"
+}
+DEBUG: Created Pull Request #3(branch="renovate/npm-8.x")
+WARN: artifactErrors(branch="renovate/npm-8.x")
+{
+  "artifactErrors": [
+    {
+      "lockFile": "package-lock.json",
+      "stderr": "npm notice \nnpm notice New major version of npm available! 7.24.0 -> 8.0.0\nnpm notice Changelog: <https://github.com/npm/cli/releases/tag/v8.0.0>\nnpm notice Run `npm install -g npm@8.0.0` to update!\nnpm notice \nnpm ERR! code EBADENGINE\nnpm ERR! engine Unsupported engine\nnpm ERR! engine Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Not compatible with your version of node/npm: undefined\nnpm ERR! notsup Required: {\"node\":\">=12\",\"npm\":\"8.x\"}\nnpm ERR! notsup Actual:   {\"npm\":\"7.24.2\",\"node\":\"v16.10.0\"}\n\nnpm ERR! A complete log of this run can be found in:\nnpm ERR!     /tmp/renovate-cache/others/npm/_logs/2021-10-08T17_33_25_474Z-debug.log\n"
+    }
+  ]
+}
+DEBUG: Retrieved closed PR list with graphql(branch="renovate/npm-8.x")
+{
+  "prNumbers": [
+    1
+  ]
+}
+DEBUG: Getting comments for #3(branch="renovate/npm-8.x")
+DEBUG: Found 0 comments(branch="renovate/npm-8.x")
+DEBUG: Ensuring comment "⚠ Artifact update problem" in #3(branch="renovate/npm-8.x")
+INFO: Comment added(branch="renovate/npm-8.x")
+{
+  "issueNo": 3,
+  "topic": "⚠ Artifact update problem"
+}
+DEBUG: getBranchPr(renovate/npm-8.x)
+DEBUG: findPr(renovate/npm-8.x, undefined, open)
+DEBUG: Found PR #3
+DEBUG: Returning from graphql open PR list
+DEBUG: Ensuring Dependency Dashboard
+DEBUG: ensureIssue(Dependency Dashboard)
+DEBUG: Patching issue
+DEBUG: Issue updated
+DEBUG: Removing any stale branches
+DEBUG: config.repoIsOnboarded=true
+DEBUG: Branch lists
+{
+  "branchList": [
+    "renovate/npm-8.x"
+  ],
+  "renovateBranches": [
+    "renovate/npm-8.x"
+  ]
+}
+DEBUG: remainingBranches=
+DEBUG: No branches to clean up
+DEBUG: Repository timing splits (milliseconds)
+{
+  "splits": {
+    "init": 2834,
+    "extract": 177,
+    "lookup": 517,
+    "update": 18874
+  },
+  "total": 23517
+}
+DEBUG: http statistics
+{
+  "urls": {
+    "https://api.github.com/graphql (POST)": 5,
+    "https://api.github.com/repos/glasser/renovate-reproduction-12068/commits/3c3bfee3f267b1c9fdb0c10a6cbdfe123f81c136/statuses (GET)": 2,
+    "https://api.github.com/repos/glasser/renovate-reproduction-12068/commits/renovate/npm-8.x/status (GET)": 1,
+    "https://api.github.com/repos/glasser/renovate-reproduction-12068/contents/renovate.json5 (GET)": 1,
+    "https://api.github.com/repos/glasser/renovate-reproduction-12068/issues/2 (GET)": 2,
+    "https://api.github.com/repos/glasser/renovate-reproduction-12068/issues/2 (PATCH)": 1,
+    "https://api.github.com/repos/glasser/renovate-reproduction-12068/issues/3/comments (GET)": 1,
+    "https://api.github.com/repos/glasser/renovate-reproduction-12068/issues/3/comments (POST)": 1,
+    "https://api.github.com/repos/glasser/renovate-reproduction-12068/issues/3/labels (POST)": 1,
+    "https://api.github.com/repos/glasser/renovate-reproduction-12068/pulls (GET)": 1,
+    "https://api.github.com/repos/glasser/renovate-reproduction-12068/pulls (POST)": 1,
+    "https://api.github.com/repos/glasser/renovate-reproduction-12068/statuses/3c3bfee3f267b1c9fdb0c10a6cbdfe123f81c136 (POST)": 1,
+    "https://api.github.com/repos/whitesource/merge-confidence/contents/beta.json (GET)": 1,
+    "https://registry.npmjs.org/renovate-config-apollo-open-source (GET)": 1
+  },
+  "hostStats": {
+    "api.github.com": {
+      "requestCount": 19,
+      "requestAvgMs": 302,
+      "queueAvgMs": 0
+    },
+    "registry.npmjs.org": {
+      "requestCount": 1,
+      "requestAvgMs": 61,
+      "queueAvgMs": 0
+    }
+  },
+  "totalRequests": 20
+}
+INFO: Repository finished
+{
+  "durationMs": 23517
+}
